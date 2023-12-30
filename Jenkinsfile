@@ -31,12 +31,12 @@ pipeline {
             steps {
                 sh """
                    git config --global user.name "rajasekaranksr"
-                   git config --global user.email "rajasekaranksr@gmail.com"
+                   git config --global user.email "sivakumaran.rajasekaran@gmail.com"
                    git add deployment.yaml
                    git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                  sh "git push https://github.com/rajasekaranksr/gitops-register-app.git main"
+                  sh "git push https://github.com/rajasekaranksr/gitops-register-app main"
                 }
             }
         }
